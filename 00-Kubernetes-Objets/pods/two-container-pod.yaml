@@ -1,0 +1,23 @@
+# Which version of the Kubernetes API you’re using to create this object
+apiVersion: v1
+
+# What kind of object you want to create
+kind: Pod
+
+# Data that helps uniquely identify the object, including a name string, UID, and optional namespace
+metadata:
+  name: two-containers
+
+# The spec, which you must provide, describes your desired state for the object – the characteristics
+# that you want the object to have.
+spec:
+  restartPolicy: Never
+
+# The status describes the actual state of the object, and is supplied and updated by the Kubernetes system.
+# At any given time, the Kubernetes Control Plane actively manages an object’s actual state to match the desired state you supplied.
+#status:
+
+# Default volume of the Pod
+volumes:
+- name: shared-data
+  emptyDir: {}
